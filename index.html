@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Tugas Pintar — To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">PENGURUSAN TUGAS</p>
+        <h1>Tugas Pintar</h1>
+        <p class="subtitle">Senaraikan, susun dan siapkan tugasan anda dengan lebih teratur.</p>
+      </div>
+      <button id="clearCompleted" class="ghost-btn" type="button">Padam selesai</button>
+    </header>
+
+    <section class="composer" aria-label="Tambah tugasan">
+      <input id="taskInput" type="text" maxlength="120" placeholder="Apa yang perlu dibuat?" autocomplete="off">
+      <select id="priorityInput" aria-label="Keutamaan">
+        <option value="low">Rendah</option>
+        <option value="medium" selected>Sederhana</option>
+        <option value="high">Tinggi</option>
+      </select>
+      <input id="dateInput" type="date" aria-label="Tarikh akhir">
+      <button id="addTask" class="primary-btn" type="button">+ Tambah</button>
+    </section>
+
+    <section class="stats" aria-label="Ringkasan tugasan">
+      <div><strong id="totalCount">0</strong><span>Semua</span></div>
+      <div><strong id="activeCount">0</strong><span>Belum siap</span></div>
+      <div><strong id="doneCount">0</strong><span>Selesai</span></div>
+    </section>
+
+    <nav class="filters" aria-label="Tapis tugasan">
+      <button class="filter active" data-filter="all">Semua</button>
+      <button class="filter" data-filter="active">Belum siap</button>
+      <button class="filter" data-filter="done">Selesai</button>
+      <button class="filter" data-filter="high">Keutamaan tinggi</button>
+    </nav>
+
+    <section id="taskList" class="task-list" aria-live="polite"></section>
+    <p id="emptyState" class="empty">Tiada tugasan. Tambah tugasan pertama anda.</p>
+
+    <footer>Data disimpan secara automatik dalam pelayar anda.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
